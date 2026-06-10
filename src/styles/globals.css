@@ -1,0 +1,136 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─────────────────────────────────────────────────────────────────────────
+   RE:BOUND — Design tokens (DESIGN.md §1–3)
+   "Discipline meets softness." Warm, editorial, premium.
+   ───────────────────────────────────────────────────────────────────────── */
+:root {
+  /* §1 Colour tokens — sampled from the homepage, warm & low-saturation */
+  --c-parchment: #ebecdd; /* primary background — never #fff */
+  --c-taupe: #a89b83; /* alternating section band */
+  --c-terracotta: #6b3a22; /* primary CTA / accents */
+  --c-espresso: #4b3724; /* dark button / deep accent */
+  --c-walnut: #3c2e1e; /* photo scrims, darkest surfaces */
+  --c-ink: #2a2018; /* primary text on light */
+  --c-ink-soft: #3a332b; /* body copy on parchment */
+  --c-stone: #6b6758; /* muted text, eyebrows, captions */
+  --c-clay-100: #d9d3c7; /* ghost button border, hairlines */
+  --c-cream-line: #dad9c6; /* dividers / input borders */
+  --c-on-dark: #f3f1e8; /* text over photos & terracotta */
+
+  /* §2 Typography — display serif + grotesque sans (font vars set by next/font) */
+  --font-display: var(--font-newsreader), Georgia, serif;
+  --font-sans: var(--font-hanken), system-ui, sans-serif;
+
+  /* §3 Spacing / layout / radius */
+  --maxw: 1280px;
+  --radius-sm: 2px;
+  --radius-md: 4px;
+  --radius-pill: 999px;
+}
+
+@layer base {
+  *,
+  *::before,
+  *::after {
+    box-sizing: border-box;
+  }
+
+  html {
+    scroll-behavior: smooth;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  body {
+    /* Body background is ALWAYS parchment, never #fff (DESIGN.md §1) */
+    background-color: var(--c-parchment);
+    color: var(--c-ink-soft);
+    font-family: var(--font-sans);
+    font-size: 1rem;
+    line-height: 1.65;
+    text-rendering: optimizeLegibility;
+  }
+
+  /* Headlines use the display serif; never bold for emphasis — use italic. */
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    font-weight: 400;
+    color: var(--c-ink);
+    text-wrap: pretty;
+  }
+
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+
+  ::selection {
+    background: var(--c-terracotta);
+    color: var(--c-on-dark);
+  }
+
+  /* Hairline focus ring in terracotta — no glow (DESIGN.md §4.4) */
+  :focus-visible {
+    outline: 2px solid var(--c-terracotta);
+    outline-offset: 2px;
+  }
+}
+
+@layer components {
+  /* Page side padding: 24px mobile → 64px desktop, capped at --maxw */
+  .container-rb {
+    width: 100%;
+    max-width: calc(var(--maxw) + 128px);
+    margin-inline: auto;
+    padding-inline: 24px;
+  }
+  @media (min-width: 768px) {
+    .container-rb {
+      padding-inline: 64px;
+    }
+  }
+
+  /* Slow vertical rhythm — 64px mobile, 128px desktop (core to the brand) */
+  .section-rb {
+    padding-block: 64px;
+  }
+  @media (min-width: 768px) {
+    .section-rb {
+      padding-block: 128px;
+    }
+  }
+
+  /* Eyebrow: uppercase sans, wide tracking, precedes every serif statement */
+  .eyebrow {
+    font-family: var(--font-sans);
+    font-size: 0.8125rem;
+    font-weight: 600;
+    line-height: 1.4;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--c-stone);
+  }
+  .eyebrow--on-dark {
+    color: var(--c-on-dark);
+  }
+
+  /* Italic accent word inside serif headlines */
+  .accent-italic {
+    font-style: italic;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+}

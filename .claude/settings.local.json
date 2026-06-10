@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Read(//private/tmp/design_extract/guide-test/project/**)",
+      "Bash(wc -l \"Home.html\" \"Services.html\" \"Style Guide.html\" \"Home Mobile Preview.html\" DESIGN.md tokens.css)"
+    ]
+  }
+}
