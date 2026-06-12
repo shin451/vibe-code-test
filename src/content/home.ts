@@ -10,7 +10,7 @@ export const homeContent: HomeContent = {
       'Slow, deliberate, brutal in the best way — in a room that feels nothing like a gym.',
     ctaText: "Join the Waitlist — It's Free",
     ctaLink: '/contact',
-    image: { src: img('1518611012118-696072aa579a'), alt: 'A warm-lit studio with Megaformer equipment' },
+    image: { src: '/images/hero.jpg', alt: 'RE:BOUND studio — Megaformer class in session' },
   },
   whatIsLagree: {
     eyebrow: 'What is Lagree?',
@@ -65,7 +65,7 @@ export const homeContent: HomeContent = {
       'I came for the body and stayed for the calm. It is the only 50 minutes of my week that feels entirely my own.',
     name: 'Kaitlyn',
     role: 'Beginner',
-    image: { src: img('1540206395-68808572332f'), alt: 'Studio interior with arched ceilings' },
+    image: { src: '/images/hero-quote.jpg', alt: 'Studio interior with arched ceilings' },
   },
   form: {
     eyebrow: 'Get Ready to Transform',

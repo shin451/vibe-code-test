@@ -15,7 +15,7 @@ export function WordmarkSignoff({ logo }: { logo: string }) {
       }}
     >
       <Container>
-        <p className="select-none text-center font-display text-[clamp(3.5rem,18vw,16rem)] leading-none tracking-tight text-on-dark/90">
+        <p className="select-none text-center font-display text-[clamp(3.5rem,18vw,16rem)] leading-none tracking-tight text-on-dark">
           {logo}
         </p>
       </Container>

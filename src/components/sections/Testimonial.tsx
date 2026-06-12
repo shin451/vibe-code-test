@@ -48,7 +48,7 @@ export function Testimonial({ data, ctaButtons }: TestimonialProps) {
           <blockquote className="mt-4 font-display text-h2 italic text-on-dark md:text-display-l">
             {current.quote}
           </blockquote>
-          <figcaption className="mt-8 font-sans text-body-sm uppercase tracking-[0.14em] text-on-dark/80">
+          <figcaption className="mt-8 font-sans text-body-sm uppercase tracking-[0.14em] text-on-dark opacity-80">
             {current.name}, <span className="italic normal-case tracking-normal">{current.role}</span>
           </figcaption>
         </figure>
