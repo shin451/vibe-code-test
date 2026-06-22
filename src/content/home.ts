@@ -5,7 +5,7 @@ const img = (id: string) =>
 
 export const homeContent: HomeContent = {
   hero: {
-    headline: 'Discipline Meets *Softness*',
+    headline: 'Change Meets *Softness*',
     subheadline:
       'Slow, deliberate, brutal in the best way — in a room that feels nothing like a gym.',
     ctaText: "Join the Waitlist — It's Free",
